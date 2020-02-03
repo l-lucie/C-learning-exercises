@@ -7,10 +7,10 @@ void ordonnerTableau(int tableau[], int tailleTableau)
     int i;
     int x;
     int y;
+    
     i = 0;
     y = tailleTableau-1;
     x = 0;
-    
 
     while (i<y)
     {
