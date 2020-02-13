@@ -24,7 +24,7 @@ int main()
 {
     int i;
     int x;
-    Personne joueur_tableau[2];
+    Personne joueur_tableau[2][2];
     
     i=0;
     x=0;
@@ -56,10 +56,43 @@ int main()
     //joueur_p2.prenom = "criteo";
     scanf("%s", joueur_p2.prenom);
 
-    joueur_tableau[0]=joueur_p1;
-    joueur_tableau[1]=joueur_p2;   
+  //  joueur_tableau[0]=joueur_p1;
+  //  joueur_tableau[1]=joueur_p2;   
 
-   // ordonnerTableau(joueur_tableau, 2); 
+    joueur_tableau[0][0] = joueur_p1.age;
+    joueur_tableau[0][1] = *joueur_p1.prenom;
+    joueur_tableau[1][0] = joueur_p2.age;
+    joueur_tableau[1][1] = *joueur_p2.prenom;
+    // fonction to order the array : //
+
+    int j;
+    int k;
+    int swap;
+    int size;
+    
+    j = 0;
+    k=0;
+    size = 2;
+    swap = 0;
+
+//    while (j<size)
+//    {
+        while (j<size)
+        {
+            if (joueur_tableau[j][k] > joueur_tableau[j+1][k])
+            {
+                swap = joueur_tableau[j][k];
+                joueur_tableau[j][k]=joueur_tableau[j+1][k];
+                joueur_tableau[j+1][k] = swap;
+              //  j=0;
+            } 
+            else
+            j++;
+        }
+//    j++;
+//    }
+
+//    ordonnerTableau(joueur_tableau, 2); 
 
 
     

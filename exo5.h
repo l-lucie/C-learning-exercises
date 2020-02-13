@@ -2,23 +2,27 @@
 void ordonnerTableau(int tableau[], int tailleTableau)
 {
     int i;
-    int x;
+    int swap;
     int y;
     
     i = 0;
     y = tailleTableau-1;
-    x = 0;
+    swap = 0;
 
     while (i<y)
     {
-        if (tableau[i] > tableau[i+1])
+        while (i<y)
         {
-            x=tableau[i];
-            tableau[i]=tableau[i+1];
-            tableau[i+1] = x;
-            i = 0;
-        } 
-        else
-        i++;
+            if (tableau[i] > tableau[i+1])
+            {
+                swap=tableau[i];
+                tableau[i]=tableau[i+1];
+                tableau[i+1] = swap;
+                i = 0;
+            } 
+            else
+            i++;
+        }
+    i++;
     }
 }
