@@ -9,7 +9,7 @@ Affichez à la fin du programme les infos que vous avez recueillies sur chacun d
 #include "exo5.h"
 
 
-typedef struct Personne Personne; // je crois qu'il faut le mettre dans un fichier .h mais j'ai pas trop compris 
+typedef struct Personne Personne;  
 struct Personne
 {
     char nom[100];
@@ -24,11 +24,11 @@ int main()
 {
     int i;
     int x;
-    Personne joueur[2];
+    Personne joueur_tableau[2];
     
     i=0;
     x=0;
-    
+    /*
     while (i<2)
     {
         x = i + 1; // comme i commence à zéro, j'utilise x pour écrire le joureur 1 et pas le joueur 0 mais ça ne fonctionne pas
@@ -44,17 +44,38 @@ int main()
         // scanf("%s[^\n]" joueur.adresse);
 
         i++;
-    }
+    }*/
 
-    int tableau[2][2] = {{joueur[0].age, joueur[1].age}, {joueur[0].prenom, joueur[1].prenom}};
+    Personne joueur_p1;
+    joueur_p1.age = 30;
+    //joueur_p1.prenom = "lucie";
+    scanf("%s", joueur_p1.prenom);
+
+    Personne joueur_p2;
+    joueur_p2.age = 10;
+    //joueur_p2.prenom = "criteo";
+    scanf("%s", joueur_p2.prenom);
+
+    joueur_tableau[0]=joueur_p1;
+    joueur_tableau[1]=joueur_p2;   
+
+   // ordonnerTableau(joueur_tableau, 2); 
+
+
+    
+
+
+    printf("\n Joueur 1, prenom = [%s], age = [%d]", joueur_p1.prenom, joueur_p1.age);
+    printf("\n Joueur 2, prenom = [%s], age = [%d]", joueur_p2.prenom, joueur_p2.age);
+/*
     //int j;    
 
-   // ordonnerTableau(tableau, 2);
+ 
 
     int j,k;
     for (j = 0; j<2;j++)
     {
-        for (k=0;k,2;k++)
+        for (k=0;k<2;k++)
         {
             printf("tab[%d][%d] = %dn", i,j, tableau[j][k]);
         }
