@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,8 +21,7 @@ int main()
     int size;
     int i;
     int x;
-    Personne joueur_tableau[2];
-  //  Personne joueur_p[2];
+    Personne joueur_p[2];
     
     size = 0;
     i=1;
@@ -31,18 +31,16 @@ int main()
 
     printf("Bonjour et bienvenue :) \n\n Combien de joueur y a-t-il aujourd'hui ? ");
     scanf("%d", &size);
-  
-    i=0;
-    while(i<size)
+    
+    while(i-1<size)
     {
-       // Personne joueur_p[i];
-        printf("Quel est votre prenom? );
-        scanf("%s", joueur_tableau[i].prenom);
-        printf("Tres bien %s, et quel est votre age ? ", joueur_tableau[i].prenom);
-        scanf("%d", &joueur_tableau[i].age);
+        Personne joueur_p[i];
+        printf("Quel est votre prenom, joueur %d ? ", i);
+        scanf("%s", joueur_p[i].prenom);
+        printf("Tres bien %s, et quel est votre age ? ", joueur_p[i].prenom);
+        scanf("%d", &joueur_p[i].age);
         i++;
     }
-
 /*
     Personne joueur_p1;
     printf("Quel est votre prenom ? ");
@@ -59,11 +57,12 @@ int main()
     */
 
     // creating the array with the collected data //
-  /*  i=0;
-    while(i<size)
+    i=0;
+    printf("creation du tableau");
+    while(i-1<size)
     {
-        joueur_tableau[i].age = joueur_p[i].age;
-        strcpy(joueur_tableau[i].prenom, joueur_p[i].prenom);
+        joueur_p[i-1].age = joueur_p[i].age;
+        strcpy(joueur_p[i-1].prenom, joueur_p[i].prenom);
         i++;
     }
 /*
@@ -80,46 +79,39 @@ int main()
     
     j = 0;
     k=0;
-
+    printf("swap");
 
     while (k<size-1)
     {
         while (j<size-1)
         {
-            if (joueur_tableau[j].age > joueur_tableau[j+1].age)
+            if (joueur_p[j].age > joueur_p[j+1].age)
             {
-                swap.age = joueur_tableau[j].age;
-                strcpy(swap.prenom, joueur_tableau[j].prenom);
+                swap.age = joueur_p[j].age;
+                strcpy(swap.prenom, joueur_p[j].prenom);
                 // swap.prenom = joueur_tableau[j].prenom;
 
-                joueur_tableau[j].age = joueur_tableau[j+1].age;
-                strcpy(joueur_tableau[j].prenom, joueur_tableau[j+1].prenom);
+                joueur_p[j].age = joueur_p[j+1].age;
+                strcpy(joueur_p[j].prenom, joueur_p[j+1].prenom);
                 // joueur_tableau[j][k]=joueur_tableau[j+1][k];
 
-                joueur_tableau[j+1].age = swap.age;
-                strcpy(joueur_tableau[j+1].prenom, swap.prenom);
+                joueur_p[j+1].age = swap.age;
+                strcpy(joueur_p[j+1].prenom, swap.prenom);
                 // joueur_tableau[j+1].prenom = swap.prenom;
-                j=0;
+            
             } 
             else
             j++;
         }
     k++;
     }
-
     i=0;
     while(i<size)
     {
-    
-    printf("\n Joueur %d est [%s], [%d]", i+1, joueur_tableau[i].prenom, joueur_tableau[i].age);
+    printf("\n Joueur %d est %s, %d", i, joueur_p[i].prenom, joueur_p[i].age);
     i++;
     }
-
-
-/*
-    printf("\n Joueur 1 est %s, %d", joueur_tableau[0].prenom, joueur_tableau[0].age);
-    printf("\n Joueur 2 est %s, %d\n", joueur_tableau[1].prenom, joueur_tableau[1].age);
-*/
+    
     return 0;
 }
 

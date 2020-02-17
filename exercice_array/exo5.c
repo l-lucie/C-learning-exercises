@@ -4,7 +4,7 @@
 
 int main()
 {
-    int tableau[] = {15, 81, 22, 13};
+    int tableau[] = {4, 3, 2, 1};
     int i;    
 
     ordonnerTableau(tableau, 4);
